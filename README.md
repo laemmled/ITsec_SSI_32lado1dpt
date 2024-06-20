@@ -10,3 +10,4 @@ Example repo for Veramo Node Tutorial: [https://veramo.io/docs/node_tutorials/no
     yarn ts-node --esm ./src/create-credential.ts
     yarn ts-node --esm ./src/verify-credential.ts
 # ITsec_SSI_32lado1dpt
+# ITsec_SSI_32lado1dpt
