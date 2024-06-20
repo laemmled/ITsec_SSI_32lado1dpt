@@ -7,6 +7,8 @@ import { DIDManager } from '@veramo/did-manager'
 // Ethr did identity provider
 import { EthrDIDProvider } from '@veramo/did-provider-ethr'
 
+import { KeyDIDProvider, getDidKeyResolver} from '@veramo/did-provider-key'
+
 // Web did identity provider
 import { WebDIDProvider } from '@veramo/did-provider-web'
 
@@ -35,7 +37,7 @@ import { DataSource } from 'typeorm'
 const DATABASE_FILE = 'database.sqlite'
 
 // You will need to get a project ID from infura https://www.infura.io
-const INFURA_PROJECT_ID = '3586660d179141e3801c3895de1c2eba'
+const INFURA_PROJECT_ID = 'ce49ee4dbff140448fd4ab4d98694680'
 
 // This will be the secret key for the KMS
 const KMS_SECRET_KEY =
@@ -70,7 +72,7 @@ const KMS_SECRET_KEY =
           }),
           'did:web': new WebDIDProvider({
             defaultKms: 'local',
-          }),
+          }),"did:key": new KeyDIDProvider({defaultKms: "local"})
         },
       }),
       new DIDResolverPlugin({
@@ -82,3 +84,5 @@ const KMS_SECRET_KEY =
       new CredentialPlugin(),
     ],
   })
+
+// Test Commit
